@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homem-Aranha: A História</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(45deg, #e90052, #ff7700);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 2.5em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel-images img {
+            width: 100%;
+            display: none;
+        }
+        .carousel-images img.active {
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0;
+            user-select: none;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff7600, #e90052);
+            color: white;
+            padding: 15px 30px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            font-size: 1em;
+        }
+        .button:hover {
+            background: linear-gradient(45deg, #e90052, #ff7700);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Homem-Aranha: A História</div>
+    <div class="content">
+        <div class="section">
+            <h2>História</h2>
+            <p>Peter Parker era apenas um estudante do ensino médio em Nova York quando foi mordido por uma aranha radioativa durante uma visita escolar a um laboratório. Essa mordida inusitada concedeu-lhe poderes incríveis, incluindo força sobre-humana, agilidade e a habilidade de aderir às paredes. Inspirado por uma tragédia pessoal - a morte de seu amado Tio Ben, um evento que ensinou a Peter uma lição valiosa: "Com grandes poderes, vêm grandes responsabilidades" - ele decidiu usar seus novos dons para o bem.</p>
+        </div>
+        <div class="section">
+            <h2>Fotos</h2>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="spiderman1.jpg" alt="Homem-Aranha" class="active">
+                    <img src="spiderman2.jpeg" alt="Homem-Aranha em ação">
+                    <img src="spiderman3.jpeg" alt="Homem-Aranha e seus aliados">
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Entre em Ação</h2>
+            <p>Descubra mais sobre o universo do Homem-Aranha, seus amigos, inimigos e as histórias épicas que moldaram seu destino.</p>
+            <button class="button">Explore Mais</button>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+        
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.querySelectorAll(".carousel-images img");
+            if (n >= slides.length) {slideIndex = 0}
+            if (n < 0) {slideIndex = slides.length - 1}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
